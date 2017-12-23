@@ -1,6 +1,14 @@
 // Ember Component CSS
 @import "pod-styles";
+
+// This must be here before the bootstrap import,
+// otherwise the overides will not work
+@import "bootstrap-variables";
+
 // Boostrap 4, beta-2
 @import "ember-bootstrap/bootstrap";
+
 // Core IO (coreui.io)
 @import "core-ui";
+
+@import "oftalweb"

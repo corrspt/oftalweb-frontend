@@ -7,7 +7,9 @@
  */
 
 // Override Boostrap variables
-@import "bootstrap-variables";
+// This is commented because the import of Boostrap is done via ember-boostrap, as such
+// this needs to be done in app.scss
+// @import "bootstrap-variables";
 
 // Override core variables
 @import "core-variables";
