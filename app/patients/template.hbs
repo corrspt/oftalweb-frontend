@@ -1,7 +1,6 @@
 <ol class="breadcrumb">
-  <li class="breadcrumb-item"><a href="/docs/">Home</a></li>
-  <li class="breadcrumb-item">Components </li>
-  <li class="breadcrumb-item active">Bootstrap Cards</li>
+  <li class="breadcrumb-item"><a href="/docs/">Início</a></li>
+  <li class="breadcrumb-item active">Fichas</li>
 </ol>
 
 <div class="card">
@@ -19,7 +18,7 @@
         <tbody>
           {{#each model as |patient|}}
             <tr>
-              <td>{{patient.name}}</td>
+              <td>{{#link-to 'patient' patient}}{{patient.name}}{{/link-to}}</td>
               <td></td>
             </tr>
           {{/each}}
