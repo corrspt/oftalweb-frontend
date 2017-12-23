@@ -1,2 +1,12 @@
 {{#link-to 'patients'}} Voltar à Lista {{/link-to}}
-{{patient.name}}
+
+{{#o-panel title=patient.name}}
+  <div class="row">
+    <div class="col-sm-6">
+      {{patient.name}}
+    </div>
+    <div class="col-sm-6">
+
+    </div>
+  </div>
+{{/o-panel}}
