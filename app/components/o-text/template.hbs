@@ -1,0 +1,20 @@
+<div class="form-group">
+  {{#if renderLabel}}
+    <label title="{{title}}" for='{{concat id '_input'}}' class={{if hasError 'text-danger'}}>
+      {{label}} {{#if isRequired}}*{{/if}}
+    </label>
+  {{/if}}
+  <input
+    value={{value}}
+    oninput={{action onUpdateValue value="target.value"}}
+    class='form-control {{if hasError 'is-invalid'}}'
+    placeholder={{placeholder}}
+    type='text'
+    disabled={{disabled}}
+    id={{if id (concat id '_input')}}
+  >
+  <div class="invalid-feedback">{{error}}</div>
+  {{#if hasHelp}}
+    <span class="help-block">{{helpText}}</span>
+  {{/if}}
+</div>

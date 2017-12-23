@@ -1,12 +1,15 @@
 {{#link-to 'patients'}} Voltar à Lista {{/link-to}}
 
 {{#o-panel title=patient.name}}
-  <div class="row">
-    <div class="col-sm-6">
-      {{patient.name}}
+    <div class="row">
+      <div class="col-sm-6">
+        {{o-text
+            value=(readonly patient.name)
+            onUpdateValue=(action (mut patient.name))
+            label='Nome'
+        }}
+      </div>
+      <div class="col-sm-6">
+      </div>
     </div>
-    <div class="col-sm-6">
-
-    </div>
-  </div>
 {{/o-panel}}
