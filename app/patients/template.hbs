@@ -17,14 +17,12 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Pedro</td>
-            <td>27/05/2017</td>
-          </tr>
-          <tr>
-            <td>Tiago</td>
-            <td>27/05/2017</td>
-          </tr>
+          {{#each model as |patient|}}
+            <tr>
+              <td>{{patient.name}}</td>
+              <td></td>
+            </tr>
+          {{/each}}
         </tbody>
       </table>
     </div>
