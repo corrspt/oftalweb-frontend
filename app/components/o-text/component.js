@@ -1,6 +1,5 @@
 import Component from '@ember/component';
 import { notEmpty, alias } from '@ember/object/computed';
-import { set } from "@ember/object";
 
 export default Component.extend({
   tagName: '',
