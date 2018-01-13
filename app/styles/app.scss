@@ -11,4 +11,7 @@
 // Core IO (coreui.io)
 @import "core-ui";
 
-@import "oftalweb"
+@import "oftalweb";
+
+@import 'ember-power-select/themes/bootstrap';
+@import "ember-power-select";

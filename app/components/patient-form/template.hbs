@@ -10,6 +10,15 @@
         }}
       </div>
       <div class="col-sm-6">
+        {{#o-select
+            options=countries
+            value=(readonly location)
+            onUpdateValue=(action (mut location))
+            searchEnabled=false
+            label='Location' as |option|
+        }}
+          {{option.name}}
+        {{/o-select}}
       </div>
     </div>
 {{/o-panel}}

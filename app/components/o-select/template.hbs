@@ -1,0 +1,31 @@
+<div class="form-group">
+  {{#if renderLabel}}
+    <label title="{{title}}">
+      {{label}} {{#if isRequired}}*{{/if}}
+    </label>
+  {{/if}}
+  {{#power-select
+      triggerClass=(concat 'form-control ' cssTriggerClass)
+      options=options
+      optionsComponent=optionsComponent
+
+      searchEnabled=searchEnabled
+      searchField=searchField
+      disabled=disabled
+      allowClear=true
+      selected=value
+      onchange=(action onUpdateValue)
+      search=this.attrs.search
+      renderInPlace=renderInPlace
+      noMatchesMessage=noMatchesMessage
+      extra=extra
+      beforeOptionsComponent=beforeOptionsComponent
+      placeholder=placeholder
+    as |option|}}
+      {{yield option}}
+  {{/power-select}}
+  <div class="invalid-feedback">{{error}}</div>
+  {{#if hasHelp}}
+    <span class="help-block {{helpClass}}" data-test-selector="attribute-help">{{helpText}}</span>
+  {{/if}}
+</div>
