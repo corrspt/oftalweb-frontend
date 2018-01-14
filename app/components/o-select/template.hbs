@@ -8,14 +8,13 @@
       triggerClass=(concat 'form-control ' cssTriggerClass)
       options=options
       optionsComponent=optionsComponent
-
       searchEnabled=searchEnabled
       searchField=searchField
       disabled=disabled
       allowClear=true
       selected=(readonly value)
       onchange=(action onUpdateValue)
-      search=this.attrs.search
+      search=(action search)
       renderInPlace=renderInPlace
       noMatchesMessage=noMatchesMessage
       extra=extra

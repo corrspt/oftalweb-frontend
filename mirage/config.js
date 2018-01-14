@@ -25,4 +25,6 @@ export default function() {
   */
   this.get('/patients');
   this.get('/patients/:id');
+
+  this.get('/main-diagnoses');
 }

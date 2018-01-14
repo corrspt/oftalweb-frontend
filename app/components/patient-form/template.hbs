@@ -1,6 +1,7 @@
 {{#link-to 'patients'}} Voltar à Lista {{/link-to}}
 
 {{#o-panel title=patient.name}}
+  {{#o-fieldset title='Informações'}}
     <div class="row">
       <div class="col-sm-6">
         {{o-text
@@ -10,7 +11,12 @@
         }}
       </div>
       <div class="col-sm-6">
-        {{#o-select
+        {{o-datepicker
+            value=currentDate
+            label='Data Nascimento'
+            onUpdateValue=(action (mut currentDate))
+        }}
+        {{!-- {{#o-select
             options=countries
             value=(readonly location)
             onUpdateValue=(action (mut location))
@@ -18,7 +24,69 @@
             label='Location' as |option|
         }}
           {{option.name}}
+        {{/o-select}} --}}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        {{o-text
+            value=(readonly idCard)
+            onUpdateValue=(action (mut idCard))
+            label='B.I.'
+        }}
+      </div>
+      <div class="col-sm-6">
+        {{o-text
+            value=(readonly email)
+            onUpdateValue=(action (mut email))
+            label='Email'
+        }}
+      </div>
+    </div>
+  {{/o-fieldset}}
+  {{#o-fieldset title='Profissional'}}
+    <div class="row">
+      <div class="col-sm-6">
+        {{o-text
+            value=(readonly fiscalNumber)
+            onUpdateValue=(action (mut fiscalNumber))
+            label='Nº Contribuinte (NIF)'
+        }}
+      </div>
+      <div class="col-sm-6">
+        {{o-text
+            value=(readonly profession)
+            onUpdateValue=(action (mut profession))
+            label='Profissão'
+        }}
+      </div>
+    </div>
+  {{/o-fieldset}}
+  {{#o-fieldset title='Notas da Ficha'}}
+    <div class="row">
+      <div class="col-sm-12">
+        {{o-textarea
+            value=(readonly notes)
+            label='Notas Assistente'
+            onUpdateValue=(action (mut notes))
+            rows=4
+        }}
+      </div>
+    </div>
+  {{/o-fieldset}}
+  {{#o-fieldset title='Diagnóstico'}}
+    <div class="row">
+      <div class="col-sm-12">
+        {{#o-select
+            value=(readonly diagnostics)
+            onUpdateValue=(action (mut diagnostics))
+            searchEnabled=true
+            search=(perform data.findDiagnosis)
+            label='Diagnóstico'
+            as |option|}}
+            {{option.name}}
         {{/o-select}}
       </div>
     </div>
+  {{/o-fieldset}}
 {{/o-panel}}

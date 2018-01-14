@@ -1,5 +1,6 @@
 import Component from '@ember/component';
-import { get, set } from '@ember/object';
+import { set } from '@ember/object';
+import { inject } from '@ember/service';
 
 const countries = [
   { name: 'United States',  flagUrl: '/flags/us.svg' },
@@ -14,6 +15,7 @@ const countries = [
 export default Component.extend({
   // Reference to the current patient
   patient: null,
+  data: inject('oftalweb-data'),
 
   init() {
     this._super(...arguments);

@@ -6,4 +6,5 @@ export default function(server) {
   */
 
   server.createList('patient', 10);
+  server.createList('main-diagnosis', 100);
 }
