@@ -5,7 +5,7 @@
     </label>
   {{/if}}
   <input
-    value={{value}}
+    value={{readonly value}}
     oninput={{action onUpdateValue value="target.value"}}
     class='form-control {{if hasError 'is-invalid'}}'
     placeholder={{placeholder}}

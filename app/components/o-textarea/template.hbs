@@ -4,7 +4,7 @@
       {{label}} {{#if isRequired}}*{{/if}}
     </label>
   {{/if}}
-  <textarea value={{readonly value}} oninput={{action onUpdateValue target.value}} disabled={{disabled}} class='form-control' rows={{rows}}></textarea>
+  <textarea value={{readonly value}} oninput={{action onUpdateValue value="target.value"}} disabled={{disabled}} class='form-control' rows={{rows}}></textarea>
   <span class="help-block " data-test='error-messages'>{{error}}</span>
   {{#if hasHelp}}
     <span class="help-block" data-test='help-messages'>{{helpText}}</span>
