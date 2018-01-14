@@ -9,14 +9,14 @@
       data-ebd-id="{{dropdown.uniqueId}}-trigger"
       class='form-control {{if hasError 'is-invalid'}}'
       onclick={{dropdown.actions.toggle}}
-      value={{if selected (moment-format selected 'DD-MM-YYYY')}}
+      value={{if value (moment-format value 'DD-MM-YYYY')}}
       >
 
     {{#dropdown.content class="datepicker-demo-dropdown"}}
       {{#power-calendar class="demo-calendar-small"
         center=center
         onCenterChange=(action (mut center) value="date")
-        selected=selected
+        selected=value
         onSelect=(action onUpdateValue value="date") as |calendar|}}
         {{calendar.nav}}
         {{calendar.days}}
